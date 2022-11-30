@@ -20,7 +20,10 @@ Remember to align the itemized text with the first line of an item within a list
     can help you migrate your codebase to `jax.Array`. You can also look at
     the [Parallelism with JAX](https://jax.readthedocs.io/en/latest/notebooks/jax_Array.html)
     tutorial to understand the new concepts.
-
+  * If using ABSL flags together with `jax.config`, the ABSL flag values are no
+    longer read or written after the JAX configuration options are initially
+    populated from the ABSL flags. This change improves performance of reading
+    `jax.config` options, which are used pervasively in JAX.
 
 ## jaxlib 0.4.0
 * Changes
